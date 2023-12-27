@@ -2,6 +2,7 @@ import { Page } from 'src/components/page';
 import { Container, Grid, Paper, Stack, Typography, useTheme, Box } from '@mui/material';
 import ResponsiveAppBar from 'src/components/Appbar';
 import Footer from 'src/components/Footer';
+import { Divider } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -40,13 +41,31 @@ export default function Kelompok() {
           <Grid container spacing={4} justifyContent="center" maxWidth="1000px" mt="4px">
             <Grid item xs={12} lg={4} />
             <Grid item xs={12} lg={4}>
-              <Paper elevation={2} sx={{ p: 2 }}>
-                <Typography textAlign="center" fontSize="18px" fontWeight="bold">
-                  Kelas
-                </Typography>
-                <Typography textAlign="center" fontSize="20px" color={theme.palette.text.secondary}>
-                  7B Sistem Informasi
-                </Typography>
+              <Paper elevation={2}>
+                <Box p={2}>
+                  <Typography textAlign="center" fontWeight="bold">
+                    Mata Kuliah
+                  </Typography>
+                  <Typography textAlign="center" color={theme.palette.text.secondary}>
+                    Aplikasi SIG
+                  </Typography>
+                  <Typography textAlign="center" fontWeight="bold" mt="12px">
+                    Dosen
+                  </Typography>
+
+                  <Typography textAlign="center" color={theme.palette.text.secondary}>
+                    Eva Khudzaeva, M.Si
+                  </Typography>
+                </Box>
+                <Divider />
+                <Box p={2}>
+                  <Typography textAlign="center" fontWeight="bold">
+                    Kelas
+                  </Typography>
+                  <Typography textAlign="center" color={theme.palette.text.secondary}>
+                    7B Sistem Informasi
+                  </Typography>
+                </Box>
               </Paper>
             </Grid>
             <Grid item xs={12} lg={4} />

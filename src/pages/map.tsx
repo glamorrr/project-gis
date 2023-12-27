@@ -54,7 +54,7 @@ export default function MapPage() {
           Jelajahi Kafe di Setiabudi, Jakarta Selatan
         </Typography>
         <Stack direction={{ xs: 'column', lg: 'row' }} spacing="12px">
-          <Box maxWidth={{ lg: '450px' }}>
+          <Box width={{ lg: '420px' }}>
             <Paper elevation={1}>
               <TextField
                 fullWidth
@@ -117,6 +117,7 @@ export default function MapPage() {
                       width="80px"
                       height="80px"
                       component="img"
+                      flexShrink={0}
                       src={coffee.properties.Gambar?.[0]}
                       borderRadius="8px"
                       border="1px solid"
