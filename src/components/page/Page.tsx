@@ -13,7 +13,7 @@ interface Props extends BoxProps {
 const Page = forwardRef<HTMLDivElement, Props>(({ children, title = '', meta, ...other }, ref) => (
   <>
     <Head>
-      <title>{`${title} | Setiabudi Kopi `}</title>
+      <title>{`${title} | Jelajahi Kopi di Setiabudi `}</title>
       {meta}
     </Head>
 
