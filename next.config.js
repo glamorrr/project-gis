@@ -3,6 +3,5 @@ module.exports = {
   trailingSlash: true,
   env: {
     // HOST
-    HOST_API_KEY: 'https://dev.faccia.id/',
   },
 };

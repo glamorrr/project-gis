@@ -2,9 +2,6 @@ import { useMemo } from 'react';
 // @mui
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
-// components
-import { useSettingsContext } from '../components/settings';
-//
 import palette from './palette';
 import typography from './typography';
 import shadows from './shadows';
@@ -19,18 +16,15 @@ type Props = {
 };
 
 export default function ThemeProvider({ children }: Props) {
-  const { themeMode, themeDirection } = useSettingsContext();
-
   const themeOptions: ThemeOptions = useMemo(
     () => ({
-      palette: palette(themeMode),
+      palette: palette('light'),
       typography,
       shape: { borderRadius: 8 },
-      direction: themeDirection,
-      shadows: shadows(themeMode),
-      customShadows: customShadows(themeMode),
+      shadows: shadows('light'),
+      customShadows: customShadows('light'),
     }),
-    [themeDirection, themeMode]
+    []
   );
 
   const theme = createTheme(themeOptions);

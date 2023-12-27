@@ -1,8 +1,8 @@
 import { Page } from 'src/components/page';
-import { Box, Button, Container, Grid, Paper, Stack, Typography, useTheme } from '@mui/material';
+import { Button, Container, Paper, Stack, Typography, useTheme } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { coffeePoints } from 'src/assets/data/kopi';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 const MyMap = dynamic(() => import('src/components/Map'), { ssr: false });
 
 // ----------------------------------------------------------------------
@@ -11,7 +11,7 @@ export default function Index() {
   const theme = useTheme();
   const zoom = 13;
   const position = [-6.215105509, 106.8302911];
-  const [map, setMap] = useState<any>(null);
+  const [, setMap] = useState<any>(null);
   const markerRefs = useRef([]);
   const [selected, setSelected] = useState<number | null>(null);
 

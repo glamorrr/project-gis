@@ -1,5 +1,5 @@
 // src/components/Map.tsx
-import { MapContainer, Marker, Polygon, Popup, TileLayer, GeoJSON, useMap } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import 'leaflet-defaulticon-compatibility';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import { coffeePoints } from 'src/assets/data/kopi';
@@ -20,16 +20,14 @@ export default function MyMap(props: any) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {coffeePoints.features.map((coffee) => {
-        return (
-          <CoffeeMarker
-            onClickMarker={onClickMarker}
-            markerRefs={markerRefs}
-            key={coffee.properties.No}
-            coffee={coffee}
-          />
-        );
-      })}
+      {coffeePoints.features.map((coffee) => (
+        <CoffeeMarker
+          onClickMarker={onClickMarker}
+          markerRefs={markerRefs}
+          key={coffee.properties.No}
+          coffee={coffee}
+        />
+      ))}
 
       <GeoJSON data={setiabudiPolygons as any} />
     </MapContainer>

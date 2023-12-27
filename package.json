@@ -1,8 +1,8 @@
 {
-  "name": "kelartech-order-app",
-  "author": "Kelartech",
+  "name": "project-gis",
+  "author": "projectgis",
   "version": "1.0.0",
-  "description": "Order App Management",
+  "description": "project gis",
   "private": true,
   "scripts": {
     "lint": "next lint",
