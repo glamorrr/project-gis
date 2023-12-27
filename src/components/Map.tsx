@@ -33,7 +33,6 @@ export default function MyMap(props: any) {
       ref={setMap}
     >
       <MinimapControl position="bottomright" />
-
       <LayersControl position="topright">
         <LayersControl.BaseLayer checked name="Open Street Map">
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
