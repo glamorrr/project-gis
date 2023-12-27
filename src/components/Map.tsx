@@ -19,6 +19,7 @@ import { jakselPolygons } from 'src/assets/data/jaksel';
 import { jakselLines } from 'src/assets/data/jakseljalan';
 import { useCallback, useMemo, useState } from 'react';
 import { useEventHandlers } from '@react-leaflet/core';
+import Iconify from './iconify';
 
 export default function MyMap(props: any) {
   const { position, zoom, setMap, markerRefs, onClickMarker } = props;
@@ -121,7 +122,7 @@ const CoffeeMarker = ({ coffee, markerRefs, onClickMarker }: any) => {
           href="#coffeeDetail"
           display="block"
         >
-          {coffee.properties.Nama}
+          {coffee.properties.Nama} <Iconify icon="ic:baseline-arrow-outward" width="12px" />
         </MUILink>
       </Popup>
     </Marker>
