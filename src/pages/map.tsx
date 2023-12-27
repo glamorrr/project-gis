@@ -50,7 +50,7 @@ export default function MapPage() {
     <Page title="Map">
       <ResponsiveAppBar />
       <Container maxWidth={'xl'} sx={{ pb: 4 }}>
-        <Typography variant="h2" component="h1" mt="48px" mb="32px">
+        <Typography variant="h2" component="h1" mt="48px" mb="32px" id="pageTitle">
           Jelajahi Kafe di Setiabudi, Jakarta Selatan
         </Typography>
         <Stack direction={{ xs: 'column', lg: 'row' }} spacing="12px">
@@ -91,6 +91,7 @@ export default function MapPage() {
               {filtered.map((coffee, i, arr) => {
                 const onClick = () => {
                   (markerRefs.current[coffee.properties.No] as any).fire('click');
+                  document.getElementById('pageTitle')?.scrollIntoView();
                 };
                 return (
                   <Stack
