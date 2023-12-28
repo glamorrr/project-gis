@@ -10,12 +10,12 @@ const people = [
   {
     name: 'Dwi Oktaviyani Arifin',
     nim: '11200930000036',
-    img: '/assets/images/hero.png',
+    img: '/assets/images/dwi.jpg',
   },
   {
     name: 'Nawroh Diyaanah M.',
     nim: '11200930000054',
-    img: '/assets/images/hero.png',
+    img: '/assets/images/nawroh.jpg',
   },
   {
     name: 'Toni Anugrah',
