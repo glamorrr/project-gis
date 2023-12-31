@@ -1,8 +1,7 @@
 import { Page } from 'src/components/page';
-import { Container, Grid, Paper, Stack, Typography, useTheme, Box } from '@mui/material';
+import { Container, Grid, Paper, Stack, Typography, useTheme, Box, Divider } from '@mui/material';
 import ResponsiveAppBar from 'src/components/Appbar';
 import Footer from 'src/components/Footer';
-import { Divider } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +51,6 @@ export default function Kelompok() {
                   <Typography textAlign="center" fontWeight="bold" mt="12px">
                     Dosen
                   </Typography>
-
                   <Typography textAlign="center" color={theme.palette.text.secondary}>
                     Eva Khudzaeva, M.Si
                   </Typography>
@@ -64,6 +62,12 @@ export default function Kelompok() {
                   </Typography>
                   <Typography textAlign="center" color={theme.palette.text.secondary}>
                     7B Sistem Informasi
+                  </Typography>
+                  <Typography textAlign="center" fontWeight="bold" mt="12px">
+                    Kelompok
+                  </Typography>
+                  <Typography textAlign="center" color={theme.palette.text.secondary}>
+                    7
                   </Typography>
                 </Box>
               </Paper>

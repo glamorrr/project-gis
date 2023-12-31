@@ -9,24 +9,23 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Iconify from './iconify';
-import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 
 const pages = [
-  { title: 'Beranda', href: '/' },
+  { title: 'Home', href: '/' },
   { title: 'Map', href: '/map' },
-  { title: 'Kelompok', href: '/kelompok' },
+  { title: 'Resep Kopi', href: '/resep' },
+  { title: 'About', href: '/kelompok' },
 ];
 
 function ResponsiveAppBar() {
-  const router = useRouter();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (page: any) => {
-    router.push(page.href);
+  const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
@@ -82,9 +81,11 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.title} onClick={() => handleCloseNavMenu(page)}>
-                  <Typography textAlign="center">{page.title}</Typography>
-                </MenuItem>
+                <NextLink key={page.title} passHref href={page.href}>
+                  <MenuItem onClick={() => handleCloseNavMenu()}>
+                    <Typography textAlign="center">{page.title}</Typography>
+                  </MenuItem>
+                </NextLink>
               ))}
             </Menu>
           </Box>
@@ -106,16 +107,17 @@ function ResponsiveAppBar() {
           >
             SetiaKopi
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page.title}
-                onClick={() => handleCloseNavMenu(page)}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-                color="secondary"
-              >
-                {page.title}
-              </Button>
+              <NextLink key={page.title} passHref href={page.href}>
+                <Button
+                  onClick={() => handleCloseNavMenu()}
+                  sx={{ my: 2, color: 'white', mr: '16px', minWidth: 0 }}
+                  color="secondary"
+                >
+                  {page.title}
+                </Button>
+              </NextLink>
             ))}
           </Box>
         </Toolbar>

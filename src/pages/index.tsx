@@ -3,13 +3,12 @@ import { Button, Container, Grid, Paper, Stack, Typography, useTheme, Box } from
 import { coffeePoints } from 'src/assets/data/kopi';
 import Iconify from 'src/components/iconify';
 import ResponsiveAppBar from 'src/components/Appbar';
-import { useRouter } from 'next/router';
 import Footer from 'src/components/Footer';
+import NextLink from 'next/link';
 
 // ----------------------------------------------------------------------
 
 export default function Index() {
-  const router = useRouter();
   const theme = useTheme();
 
   return (
@@ -30,7 +29,8 @@ export default function Index() {
             component="h1"
             mt="16px"
             noWrap
-            fontSize="56px"
+            mb={1}
+            fontSize={{ xs: '40px', lg: '56px' }}
             sx={{
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -52,16 +52,17 @@ export default function Index() {
             SetiaKopi hadir sebagai teman setia Anda dalam mencari pengalaman kopi yang tak
             terlupakan, menyajikan informasi lengkap tentang 15 toko kopi terhits di daerah ini.
           </Typography>
-          <Button
-            size="large"
-            color="secondary"
-            variant="contained"
-            sx={{ mt: '32px' }}
-            endIcon={<Iconify icon="ic:baseline-arrow-forward" />}
-            onClick={() => router.push('/map')}
-          >
-            Jelajahi Sekarang
-          </Button>
+          <NextLink passHref href="/map">
+            <Button
+              size="large"
+              color="secondary"
+              variant="contained"
+              sx={{ mt: '32px' }}
+              endIcon={<Iconify icon="ic:baseline-arrow-forward" />}
+            >
+              Jelajahi Sekarang
+            </Button>
+          </NextLink>
 
           <Typography color={theme.palette.text.secondary} fontWeight="bold" mt="120px">
             15 Toko Kopi Paling
