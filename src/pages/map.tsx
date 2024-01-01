@@ -194,6 +194,7 @@ export default function MapPage() {
                     border: '1px solid',
                     height: 'max-content',
                     borderColor: theme.palette.grey[300],
+                    flexShrink: 0,
                   }}
                   elevation={2}
                 >
@@ -253,38 +254,82 @@ export default function MapPage() {
                       </Box>
                       <Typography mt="8px">{coffee.properties.Longitude} (Longitude)</Typography>
                     </Stack>
-                  </Stack>
-                </Paper>
-                <Paper
-                  sx={{
-                    overflow: 'hidden',
-                    border: '1px solid',
-                    flex: '1',
-                    borderColor: theme.palette.grey[300],
-                  }}
-                  elevation={2}
-                >
-                  <Box bgcolor={theme.palette.grey[200]} py={3} px={4}>
-                    <Typography variant="h4" component="h2" textAlign="center">
-                      Galeri
-                    </Typography>
-                  </Box>
-                  <Stack p={4} alignItems="center">
-                    <Masonry columns={{ xs: 1, md: 2, lg: 3 }} spacing={{ xs: 5, md: 3, lg: 1 }}>
-                      {coffee.properties.Gambar.map((src) => (
-                        <Paper elevation={2} key={src}>
-                          <Box
-                            component="img"
-                            src={src}
-                            borderRadius="8px"
-                            border="1px solid"
-                            borderColor={theme.palette.grey[300]}
+                    {!!coffee.properties.Time && (
+                      <Stack direction="row" spacing="8px">
+                        <Box>
+                          <Iconify
+                            icon="ic:baseline-access-time"
+                            width="24px"
+                            height="24px"
+                            color={theme.palette.grey[500]}
                           />
-                        </Paper>
-                      ))}
-                    </Masonry>
+                        </Box>
+                        <Typography mt="8px">{coffee.properties.Time}</Typography>
+                      </Stack>
+                    )}
                   </Stack>
                 </Paper>
+                <Stack spacing="12px">
+                  <Paper
+                    sx={{
+                      overflow: 'hidden',
+                      border: '1px solid',
+                      flex: '1',
+                      borderColor: theme.palette.grey[300],
+                    }}
+                    elevation={2}
+                  >
+                    <Box bgcolor={theme.palette.grey[200]} py={3} px={4}>
+                      <Typography variant="h4" component="h2" textAlign="center">
+                        Galeri
+                      </Typography>
+                    </Box>
+                    <Stack p={4} alignItems="center">
+                      <Masonry columns={{ xs: 1, md: 2, lg: 3 }} spacing={{ xs: 5, md: 3, lg: 1 }}>
+                        {coffee.properties.Gambar.map((src) => (
+                          <Paper elevation={2} key={src}>
+                            <Box
+                              component="img"
+                              src={src}
+                              borderRadius="8px"
+                              border="1px solid"
+                              borderColor={theme.palette.grey[300]}
+                            />
+                          </Paper>
+                        ))}
+                      </Masonry>
+                    </Stack>
+                  </Paper>
+                  {!!coffee.properties.Menu && (
+                    <Paper
+                      sx={{
+                        overflow: 'hidden',
+                        border: '1px solid',
+                        borderColor: theme.palette.grey[300],
+                      }}
+                      elevation={2}
+                    >
+                      <Box bgcolor={theme.palette.grey[200]} py={3} px={4}>
+                        <Typography variant="h4" component="h2" textAlign="center">
+                          Menu
+                        </Typography>
+                      </Box>
+                      <Stack p={4} alignItems="center" spacing="16px">
+                        {coffee.properties.Menu.map((src) => (
+                          <Paper elevation={2} key={src}>
+                            <Box
+                              component="img"
+                              src={src}
+                              borderRadius="8px"
+                              border="1px solid"
+                              borderColor={theme.palette.grey[300]}
+                            />
+                          </Paper>
+                        ))}
+                      </Stack>
+                    </Paper>
+                  )}
+                </Stack>
               </Stack>
             )}
           </Box>
