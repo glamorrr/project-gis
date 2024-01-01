@@ -80,7 +80,7 @@ export default function Recipe() {
       <Container maxWidth={'xl'} sx={{ pb: 8 }}>
         <Stack alignItems="center" mt="64px">
           <Typography color={theme.palette.text.secondary} fontWeight="bold">
-            Ingin mencoba meracik sendiri?
+            Ingin meracik sendiri?
           </Typography>
           <Typography
             fontSize="64px"
