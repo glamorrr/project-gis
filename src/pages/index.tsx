@@ -18,10 +18,10 @@ export default function Index() {
         <Stack alignItems="center" mt="64px">
           <Paper elevation={2} sx={{ bgcolor: theme.palette.grey[200], p: 4 }}>
             <Box
-              width="140px"
-              height="140px"
+              width="240px"
+              height="240px"
               component="img"
-              src="/assets/images/hero.png"
+              src="/assets/images/hero.jpg"
               sx={{ objectFit: 'cover', borderRadius: '8px' }}
             />
           </Paper>
@@ -51,6 +51,13 @@ export default function Index() {
             mengeksplorasi dan menikmati kopi terbaik di kawasan Setiabudi, Jakarta Selatan.
             SetiaKopi hadir sebagai teman setia Anda dalam mencari pengalaman kopi yang tak
             terlupakan, menyajikan informasi lengkap tentang 15 toko kopi terhits di daerah ini.
+            <br />
+            <br />
+            Kopi, begitu indah dalam kesederhanaannya, adalah cairan penyemangat yang mengundang
+            kenikmatan tak terhingga. Dalam setiap tegukan, aroma kopi membangunkan tidak hanya
+            indera penciuman tetapi juga jiwa yang lelap. Setiap biji kopi, seolah menjadi
+            penjelmaan petualangan dari kebun yang subur hingga diseduh dalam cangkir, membawa
+            cerita hidupnya sendiri.
           </Typography>
           <NextLink passHref href="/map">
             <Button

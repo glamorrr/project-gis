@@ -10,6 +10,7 @@ import {
   useMapEvent,
   Rectangle,
 } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet-defaulticon-compatibility';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import { coffeePoints } from 'src/assets/data/kopi';
@@ -57,8 +58,64 @@ export default function MyMap(props: any) {
             maxZoom={20}
           />
         </LayersControl.BaseLayer>
+        set
         <LayersControl.Overlay checked name="Kecamatan Setiabudi">
-          <GeoJSON data={setiabudiPolygons as any} />
+          <GeoJSON
+            style={(feature) => {
+              // dapetin setiap kelurahan di kecamatan
+              const id = feature?.properties.id;
+
+              // menentukan warna setiap kelurahan
+              if (id === 1) {
+                return { color: '#1E90FF' };
+              }
+              if (id === 2) {
+                return { color: 'blue' };
+              }
+              if (id === 3) {
+                return { color: 'red' };
+              }
+              if (id === 4) {
+                return { color: '#2F4F4F' };
+              }
+              if (id === 5) {
+                return { color: 'black' };
+              }
+              if (id === 6) {
+                return { color: '#CD5C5C' };
+              }
+              if (id === 7) {
+                return { color: '#A52A2A' };
+              }
+              if (id === 8) {
+                return { color: '#8B0000' };
+              }
+              if (id === 9) {
+                return { color: '#9932CC' };
+              }
+              if (id === 10) {
+                return { color: '#BDB76B' };
+              }
+              if (id === 11) {
+                return { color: '#8B008B' };
+              }
+              if (id === 12) {
+                return { color: '#556B2F' };
+              }
+              if (id === 13) {
+                return { color: '#006400' };
+              }
+              if (id === 14) {
+                return { color: '#B8860B' };
+              }
+              if (id === 15) {
+                return { color: '#7FFF00' };
+              }
+
+              return { color: '#5F9EA0' };
+            }}
+            data={setiabudiPolygons as any}
+          />
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Jakarta Selatan">
           <GeoJSON style={{ color: theme.palette.warning.dark }} data={jakselPolygons as any} />
@@ -84,8 +141,19 @@ const CoffeeMarker = ({ coffee, markerRefs, onClickMarker }: any) => {
   const map = useMap();
   const theme = useTheme();
 
+  const customMarker = new L.Icon({
+    iconUrl: '/assets/images/icon-toko.svg',
+    iconRetinaUrl: '/assets/images/icon-toko.svg',
+    iconSize: new L.Point(20, 20),
+    // shadowSize: [50, 64], // size of the shadow
+    // iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    // shadowAnchor: [4, 62], // the same for the shadow
+    // popupAnchor: [-3, -76],
+  });
+
   return (
     <Marker
+      icon={customMarker}
       ref={(ref) => {
         markerRefs.current[coffee.properties.No] = ref;
       }}
